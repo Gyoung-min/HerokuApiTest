@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgres://dwuyzgdxslfcqm:ff446360b9d68fe07e1130cc60d89957916c661f82911bba61ea467e1f3079f8@ec2-54-165-90-230.compute-1.amazonaws.com:5432/dfgthr1m6b9vlb
+    username: dwuyzgdxslfcqm
+    password: ff446360b9d68fe07e1130cc60d89957916c661f82911bba61ea467e1f3079f8
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_ssql: true
+        
+  config:
+    activate:
+      on-profile: prod
+
+  logging:
+    level:
+      org.hibernate.SQL: debug
+      org.hibernate.type: trace
