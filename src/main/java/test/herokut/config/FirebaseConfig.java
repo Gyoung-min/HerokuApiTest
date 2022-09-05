@@ -23,7 +23,7 @@ public class FirebaseConfig {
     @PostConstruct
     public FirebaseApp initializeFCM() throws IOException {
         FileInputStream serviceAccount = new FileInputStream("src/main/resources/firebaseKey.json");
-        FirebaseOptions options = new FirebaseOptions.Builder()
+        FirebaseOptions options = FirebaseOptions.builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .build();
         firebaseApp = FirebaseApp.initializeApp(options);
