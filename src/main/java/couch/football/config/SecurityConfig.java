@@ -27,7 +27,6 @@ public class SecurityConfig {
               .csrf().disable()
               .addFilterBefore(authFilterContainer.getAuthFilter(),
                       UsernamePasswordAuthenticationFilter.class);
-              //.authorizeRequests().antMatchers("/**").permitAll();
 
 
         return http.build();
