@@ -18,16 +18,18 @@ import java.io.IOException;
 @Configuration
 public class FirebaseConfig {
 
-    private FirebaseApp firebaseApp;
-
     @Bean
-    public FirebaseApp initializeFCM() throws IOException {
-        FileInputStream serviceAccount = new FileInputStream("src/main/resources/firebaseKey.json");
+    public FirebaseAuth firebaseAuth() throws IOException {
+
+        FileInputStream serviceAccount =
+                new FileInputStream("src/main/resources/firebaseKey.json");
+
         FirebaseOptions options = FirebaseOptions.builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .build();
-        firebaseApp = FirebaseApp.initializeApp(options);
-        return firebaseApp;
+        FirebaseApp.initializeApp(options);
+
+        return FirebaseAuth.getInstance(FirebaseApp.getInstance());
     }
 
 }
