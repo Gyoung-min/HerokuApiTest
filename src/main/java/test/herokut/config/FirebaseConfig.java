@@ -18,7 +18,7 @@ import java.io.IOException;
 @Configuration
 public class FirebaseConfig {
 
-    @Value("classpath:src/main/resources/firebaseKey.json")
+    @Value("src/main/resources/firebaseKey.json")
     private Resource resource;
     private FirebaseApp firebaseApp;
 
