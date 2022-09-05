@@ -20,7 +20,7 @@ public class FirebaseConfig {
 
     private FirebaseApp firebaseApp;
 
-    @PostConstruct
+    @Bean
     public FirebaseApp initializeFCM() throws IOException {
         FileInputStream serviceAccount = new FileInputStream("src/main/resources/firebaseKey.json");
         FirebaseOptions options = FirebaseOptions.builder()
