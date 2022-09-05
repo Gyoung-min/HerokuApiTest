@@ -22,7 +22,7 @@ public class FirebaseConfig {
     public FirebaseAuth firebaseAuth() throws IOException {
 
         FileInputStream serviceAccount =
-                new FileInputStream("src/main/resources/firebaseKey.json");
+                new FileInputStream("src/main/resources/config/firebaseKey.json");
 
         FirebaseOptions options = FirebaseOptions.builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
